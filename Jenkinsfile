@@ -1,11 +1,6 @@
 pipeline {
     
-    agent {
-        docker {
-            image 'node:lts-bullseye-slim' 
-            args '-p 3000:3000' 
-        }
-    }
+    agent any
 
     stages {
         stage('Build') {
@@ -29,7 +24,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', Zidecaido1: 'DOCKER_HUB_PASSWORD', PieterJanDelie: 'DOCKER_HUB_USERNAME')]) {
                     sh "docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD"
-                    sh "docker push my-node-app:${env.BUILD_ID}"
+                    sh "docker push my-node-app:1"
                 }
             }
         }
