@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'start install'
-                node('Node18.12.1'){
+                node('Node18.12'){
                     sh 'npm init -y'
                     sh 'npm install'
                 }
