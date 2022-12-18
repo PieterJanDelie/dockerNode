@@ -7,6 +7,7 @@ pipeline {
             steps {
                 echo 'start install'
                 node('Node18.12.1'){
+                    sh 'npm init -y'
                     sh 'npm install'
                 }
                 echo 'installed'
