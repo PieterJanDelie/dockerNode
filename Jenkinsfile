@@ -5,8 +5,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'start install
-                sh 'npm install'
+                echo 'start install'
+                Node('Node19.2'){
+                    sh 'npm init -y'
+                    sh 'npm install'
+                }
                 echo 'installed'
             }
         }
