@@ -5,12 +5,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'start install
                 sh 'npm install'
+                echo 'installed'
             }
         }
         stage('Test') {
             steps {
+                echo 'start test'
                 sh 'npm test'
+                echo 'test succeeded'
             }
         }
         stage('Build Docker Image') {
