@@ -7,7 +7,6 @@ pipeline {
             steps {
                 echo 'start install'
                 Node('Node19.2'){
-                    sh 'npm init -y'
                     sh 'npm install'
                 }
                 echo 'installed'
